@@ -1,12 +1,24 @@
+import dishwashingLiquid1 from "../assets/dishwashing-liquid-1.jpeg";
+import dishwashingLiquid2 from "../assets/dishwashing-liquid-2.jpeg";
+import floorCleaner1 from "../assets/floor-cleaner-1.jpeg";
+import floorCleaner2 from "../assets/floor-cleaner-2.jpeg";
+import handCleanser1 from "../assets/hand-cleanser-1.jpeg";
+import handCleanser2 from "../assets/hand-cleanser-2.jpeg";
+import liquidDetergent1 from "../assets/liquid-detergent-1.jpeg";
+import liquidDetergent2 from "../assets/liquid-detergent-2.jpeg";
+import toiletCleaner1 from "../assets/toilet-cleaner-1.jpeg";
+import toiletCleaner2 from "../assets/toilet-cleaner-2.jpeg";
+
 export const products = [
   {
     id: 1,
+    slug: "liquid-detergent",
     product: "Liquid Detergent",
     category: "Laundry Care",
     title: "Powerful Cleaning. Gentle on Fabrics.",
     description:
       "Our Liquid Detergent is specially formulated to remove tough stains while protecting the softness and color of your clothes.",
-    productImage: "https://placehold.co/600x600/png?text=Liquid+Detergent",
+    images: [liquidDetergent1, liquidDetergent2],
     size: [
       { volume: "250ml", price: 99, currency: "INR" },
       { volume: "500ml", price: 179, currency: "INR" },
@@ -24,11 +36,12 @@ export const products = [
   },
   {
     id: 2,
-    product: "Dish Wash",
+    slug: "dishwashing-liquid",
+    product: "Dishwashing Liquid",
     category: "Kitchen Care",
     title: "Sparkling Clean Dishes with a Refreshing Aroma.",
     description: "Removes stubborn grease and food residue while being gentle on your hands.",
-    productImage: "https://placehold.co/600x600/png?text=Dish+Wash",
+    images: [dishwashingLiquid1, dishwashingLiquid2],
     size: [
       { volume: "250ml", price: 79, currency: "INR" },
       { volume: "500ml", price: 149, currency: "INR" },
@@ -46,11 +59,12 @@ export const products = [
   },
   {
     id: 3,
-    product: "Hand Cleaning Liquid",
+    slug: "hand-cleanser",
+    product: "Hand Cleanser",
     category: "Personal Care",
     title: "Clean Hands. Fresh Feeling. Everyday Protection.",
     description: "Keeps your hands clean, soft, and refreshed with every wash.",
-    productImage: "https://placehold.co/600x600/png?text=Hand+Cleaning+Liquid",
+    images: [handCleanser1, handCleanser2],
     size: [
       { volume: "250ml", price: 89, currency: "INR" },
       { volume: "500ml", price: 169, currency: "INR" },
@@ -68,11 +82,12 @@ export const products = [
   },
   {
     id: 4,
+    slug: "toilet-cleaner",
     product: "Toilet Cleaner",
     category: "Bathroom Care",
     title: "Deep Cleaning for a Hygienic Bathroom.",
     description: "Powerful formula that removes stains, limescale, and unpleasant odors.",
-    productImage: "https://placehold.co/600x600/png?text=Toilet+Cleaner",
+    images: [toiletCleaner1, toiletCleaner2],
     size: [
       { volume: "250ml", price: 99, currency: "INR" },
       { volume: "500ml", price: 189, currency: "INR" },
@@ -90,11 +105,12 @@ export const products = [
   },
   {
     id: 5,
+    slug: "floor-cleaner",
     product: "Floor Cleaner",
     category: "Home Care",
     title: "Shiny Floors with Long-Lasting Freshness.",
     description: "Cleans dirt and stains while leaving your floors fresh and sparkling.",
-    productImage: "https://placehold.co/600x600/png?text=Floor+Cleaner",
+    images: [floorCleaner1, floorCleaner2],
     size: [
       { volume: "250ml", price: 89, currency: "INR" },
       { volume: "500ml", price: 169, currency: "INR" },
@@ -112,6 +128,10 @@ export const products = [
   },
 ];
 
+export function getProductBySlug(slug) {
+  return products.find((item) => item.slug === slug);
+}
+
 export const testimonials = [
   {
     name: "Priya M.",
@@ -121,7 +141,7 @@ export const testimonials = [
   {
     name: "Ariana T.",
     quote:
-      "I love that RR26 products clean well without feeling harsh. The dish wash and floor cleaner are repeat buys for me.",
+      "I love that RR26 products clean well without feeling harsh. The dishwashing liquid and floor cleaner are repeat buys for me.",
   },
   {
     name: "Dan R.",

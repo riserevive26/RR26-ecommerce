@@ -7,7 +7,7 @@ export default function Footer() {
   const scrollToSection = useSectionNavigation();
 
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
       <div className="footer-brand-block">
         <img className="footer-logo" src={logo} alt="RR26 logo" />
         <div>
@@ -20,14 +20,10 @@ export default function Footer() {
         <a href="/#products" onClick={(event) => scrollToSection(event, "products")}>
           Products
         </a>
-        <a href="/#about" onClick={(event) => scrollToSection(event, "about")}>
-          About
-        </a>
-        <a href="/#contact" onClick={(event) => scrollToSection(event, "contact")}>
-          Contact
-        </a>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </div>
-      <div className="footer-copy">© 2026 RR26</div>
+      <div className="footer-copy">© 2026 RR26 Home Cleaning Co.</div>
     </footer>
   );
 }

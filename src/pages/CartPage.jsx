@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import ProductVisual from "../components/ProductVisual";
 import { useCart } from "../context/CartContext";
 import { products } from "../data/products";
-import { formatPrice, iconForCategory } from "../utils/format";
+import { formatPrice } from "../utils/format";
 
 export default function CartPage() {
   const { state, dispatch, subtotal, itemCount } = useCart();
@@ -16,6 +15,7 @@ export default function CartPage() {
       category: product?.category ?? "Cleaning",
       color: product?.color ?? "#E8F4F0",
       title: product?.title ?? item.name,
+      image: product?.images?.[0],
     };
   });
 
@@ -43,7 +43,9 @@ export default function CartPage() {
               {cartItems.map((item) => (
                 <article key={`${item.id}-${item.volume}-${item.fragrance}`} className="cart-item">
                   <div className="cart-item-visual" style={{ background: item.color }}>
-                    <ProductVisual color={item.color} label={iconForCategory(item.category)} compact />
+                    {item.image ? (
+                      <img className="cart-item-photo" src={item.image} alt={item.name} />
+                    ) : null}
                   </div>
 
                   <div className="cart-item-copy">
