@@ -1,9 +1,9 @@
+import bathroomCleaner1 from "../assets/bathroom-cleaner-1.jpeg";
+import bathroomCleaner2 from "../assets/bathroom-cleaner-2.jpeg";
 import dishwashingLiquid1 from "../assets/dishwashing-liquid-1.jpeg";
 import dishwashingLiquid2 from "../assets/dishwashing-liquid-2.jpeg";
 import floorCleaner1 from "../assets/floor-cleaner-1.jpeg";
 import floorCleaner2 from "../assets/floor-cleaner-2.jpeg";
-import handCleanser1 from "../assets/hand-cleanser-1.jpeg";
-import handCleanser2 from "../assets/hand-cleanser-2.jpeg";
 import liquidDetergent1 from "../assets/liquid-detergent-1.jpeg";
 import liquidDetergent2 from "../assets/liquid-detergent-2.jpeg";
 import toiletCleaner1 from "../assets/toilet-cleaner-1.jpeg";
@@ -37,7 +37,7 @@ export const products = [
   {
     id: 2,
     slug: "dishwashing-liquid",
-    product: "Dishwashing Liquid",
+    product: "Dish Washing Liquid",
     category: "Kitchen Care",
     title: "Sparkling Clean Dishes with a Refreshing Aroma.",
     description: "Removes stubborn grease and food residue while being gentle on your hands.",
@@ -59,52 +59,6 @@ export const products = [
   },
   {
     id: 3,
-    slug: "hand-cleanser",
-    product: "Hand Cleanser",
-    category: "Personal Care",
-    title: "Clean Hands. Fresh Feeling. Everyday Protection.",
-    description: "Keeps your hands clean, soft, and refreshed with every wash.",
-    images: [handCleanser1, handCleanser2],
-    size: [
-      { volume: "250ml", price: 89, currency: "INR" },
-      { volume: "500ml", price: 169, currency: "INR" },
-    ],
-    colour: "Green",
-    color: "#BFE7C6",
-    fragrances: ["Lemon", "Aloe Vera", "Green Tea"],
-    keyFeatures: [
-      "Removes dirt and germs",
-      "Gentle on skin",
-      "Rich lather",
-      "Suitable for frequent use",
-      "Refreshing fragrance",
-    ],
-  },
-  {
-    id: 4,
-    slug: "toilet-cleaner",
-    product: "Toilet Cleaner",
-    category: "Bathroom Care",
-    title: "Deep Cleaning for a Hygienic Bathroom.",
-    description: "Powerful formula that removes stains, limescale, and unpleasant odors.",
-    images: [toiletCleaner1, toiletCleaner2],
-    size: [
-      { volume: "250ml", price: 99, currency: "INR" },
-      { volume: "500ml", price: 189, currency: "INR" },
-    ],
-    colour: "Blue",
-    color: "#B7D9FF",
-    fragrances: ["Green Apple", "Ocean Breeze", "Mint Fresh"],
-    keyFeatures: [
-      "Kills germs",
-      "Removes tough stains",
-      "Eliminates odors",
-      "Clings to surfaces",
-      "Keeps toilets hygienic",
-    ],
-  },
-  {
-    id: 5,
     slug: "floor-cleaner",
     product: "Floor Cleaner",
     category: "Home Care",
@@ -124,6 +78,53 @@ export const products = [
       "Quick drying",
       "Long-lasting fragrance",
       "Streak-free finish",
+    ],
+  },
+  {
+    id: 4,
+    slug: "bathroom-cleaner",
+    product: "Bathroom Cleaner",
+    category: "Bathroom Care",
+    title: "Spotless Surfaces. Fresh Bathroom Every Day.",
+    description:
+      "Cleans tiles, sinks, and fittings while cutting through soap scum and water stains.",
+    images: [bathroomCleaner1, bathroomCleaner2],
+    size: [
+      { volume: "250ml", price: 89, currency: "INR" },
+      { volume: "500ml", price: 169, currency: "INR" },
+    ],
+    colour: "Teal",
+    color: "#A8E0D8",
+    fragrances: ["Ocean Mist", "Citrus Fresh", "Herbal Clean"],
+    keyFeatures: [
+      "Removes soap scum",
+      "Cuts through limescale",
+      "Suitable for tiles and fittings",
+      "Leaves a fresh scent",
+      "Everyday bathroom hygiene",
+    ],
+  },
+  {
+    id: 5,
+    slug: "toilet-cleaner",
+    product: "Toilet Cleaner",
+    category: "Bathroom Care",
+    title: "Deep Cleaning for a Hygienic Bathroom.",
+    description: "Powerful formula that removes stains, limescale, and unpleasant odors.",
+    images: [toiletCleaner1, toiletCleaner2],
+    size: [
+      { volume: "250ml", price: 99, currency: "INR" },
+      { volume: "500ml", price: 189, currency: "INR" },
+    ],
+    colour: "Blue",
+    color: "#B7D9FF",
+    fragrances: ["Green Apple", "Ocean Breeze", "Mint Fresh"],
+    keyFeatures: [
+      "Kills germs",
+      "Removes tough stains",
+      "Eliminates odors",
+      "Clings to surfaces",
+      "Keeps toilets hygienic",
     ],
   },
 ];
