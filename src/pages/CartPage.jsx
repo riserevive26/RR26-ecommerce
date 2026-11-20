@@ -33,7 +33,7 @@ export default function CartPage() {
               <h2>Your cart is empty</h2>
               <p>Add a few RR26 essentials and they will show up here for review before checkout.</p>
             </div>
-            <Link className="primary-button" to="/#products">
+            <Link className="primary-button" to="/products">
               Browse Products
             </Link>
           </section>
@@ -133,7 +133,7 @@ export default function CartPage() {
                 <button type="button" className="primary-button full-width">
                   Proceed to Checkout
                 </button>
-                <Link className="secondary-button full-width" to="/#products">
+                <Link className="secondary-button full-width" to="/products">
                   Continue Shopping
                 </Link>
               </div>

@@ -1,13 +1,13 @@
-import bathroomCleaner1 from "../assets/bathroom-cleaner-1.jpeg";
-import bathroomCleaner2 from "../assets/bathroom-cleaner-2.jpeg";
-import dishwashingLiquid1 from "../assets/dishwashing-liquid-1.jpeg";
-import dishwashingLiquid2 from "../assets/dishwashing-liquid-2.jpeg";
-import floorCleaner1 from "../assets/floor-cleaner-1.jpeg";
-import floorCleaner2 from "../assets/floor-cleaner-2.jpeg";
-import liquidDetergent1 from "../assets/liquid-detergent-1.jpeg";
-import liquidDetergent2 from "../assets/liquid-detergent-2.jpeg";
-import toiletCleaner1 from "../assets/toilet-cleaner-1.jpeg";
-import toiletCleaner2 from "../assets/toilet-cleaner-2.jpeg";
+import bathroomCleaner1 from "../assets/new product images/Bathroom Cleaner - Front.jpeg";
+import bathroomCleaner2 from "../assets/new product images/Bathroom Cleaner - Back.jpeg";
+import dishwashingLiquid1 from "../assets/new product images/Dish Wash - Front.jpeg";
+import dishwashingLiquid2 from "../assets/new product images/Dish Wash - Back.jpeg";
+import floorCleaner1 from "../assets/new product images/Floor Cleaner - Front.jpeg";
+import floorCleaner2 from "../assets/new product images/Floor Cleaner - Back.jpeg";
+import liquidDetergent1 from "../assets/new product images/Liquid Detergent - Front.jpeg";
+import liquidDetergent2 from "../assets/new product images/Liquid Detergent - Back.jpeg";
+import toiletCleaner1 from "../assets/new product images/Toilet Cleaner - Front.jpeg";
+import toiletCleaner2 from "../assets/new product images/Toilet Cleaner - Back.jpeg";
 
 export const products = [
   {
@@ -129,23 +129,72 @@ export const products = [
   },
 ];
 
+export const productCategories = [
+  {
+    key: "laundry",
+    label: "Laundry",
+    match: ["Laundry Care"],
+    title: "Laundry Care",
+    lead: "Liquid detergent built for tough stains and everyday fabric care.",
+  },
+  {
+    key: "kitchen",
+    label: "Kitchen",
+    match: ["Kitchen Care"],
+    title: "Kitchen Care",
+    lead: "Dish washing formulas that cut grease and leave utensils sparkling.",
+  },
+  {
+    key: "bathroom",
+    label: "Bathroom",
+    match: ["Bathroom Care"],
+    title: "Bathroom Care",
+    lead: "Bathroom and toilet cleaners for hygienic, fresh surfaces.",
+  },
+  {
+    key: "floors",
+    label: "Floors",
+    match: ["Home Care"],
+    title: "Floor Care",
+    lead: "Floor cleaners that lift dirt and leave a streak-free finish.",
+  },
+];
+
 export function getProductBySlug(slug) {
   return products.find((item) => item.slug === slug);
 }
 
+export function getCategoryByKey(key) {
+  if (!key) {
+    return null;
+  }
+
+  return productCategories.find((category) => category.key === key) ?? null;
+}
+
+export function getProductsByCategoryKey(key) {
+  const category = getCategoryByKey(key);
+
+  if (!category) {
+    return products;
+  }
+
+  return products.filter((product) => category.match.includes(product.category));
+}
+
 export const testimonials = [
   {
-    name: "Priya M.",
+    name: "Priya Sharma",
     quote:
       "RR26 made my cleaning routine simpler and my home feels fresher for longer. The fragrances are such a nice touch.",
   },
   {
-    name: "Ariana T.",
+    name: "Ananya Krishnan",
     quote:
       "I love that RR26 products clean well without feeling harsh. The dishwashing liquid and floor cleaner are repeat buys for me.",
   },
   {
-    name: "Dan R.",
+    name: "Rohan Mehta",
     quote:
       "RR26 feels premium, practical, and easy to trust. The detergent handled tough stains better than I expected.",
   },

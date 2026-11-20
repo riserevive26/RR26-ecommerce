@@ -1,12 +1,14 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useSearchParams } from "react-router-dom";
 import logo from "../assets/rr26-logo.png";
 import { useCart } from "../context/CartContext";
-import { useSectionNavigation } from "../hooks/useSectionNavigation";
+import { productCategories } from "../data/products";
 
 export default function Navbar() {
   const { itemCount } = useCart();
-  const scrollToSection = useSectionNavigation();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const activeCategory = location.pathname === "/products" ? searchParams.get("category") : null;
 
   return (
     <header className="navbar-shell">
@@ -15,9 +17,7 @@ export default function Navbar() {
           <NavLink to="/" end>
             Home
           </NavLink>
-          <a href="/#products" onClick={(event) => scrollToSection(event, "products")}>
-            Shop
-          </a>
+          <NavLink to="/products">Shop</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </nav>
@@ -39,10 +39,14 @@ export default function Navbar() {
       </div>
 
       <div className="category-nav" aria-label="Product categories">
-        {["Laundry", "Kitchen", "Personal Care", "Bathroom", "Floors"].map((label) => (
-          <a key={label} href="/#products" onClick={(event) => scrollToSection(event, "products")}>
-            {label}
-          </a>
+        {productCategories.map((category) => (
+          <Link
+            key={category.key}
+            to={`/products?category=${category.key}`}
+            className={activeCategory === category.key ? "is-active" : undefined}
+          >
+            {category.label}
+          </Link>
         ))}
       </div>
     </header>
